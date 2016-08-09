@@ -10,10 +10,6 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
     console.log("Caught a fetch!");
-    // Intercept fetch request and return a custom html response
-    event.respondWith(
-        new Response('Hello <b>World!</b>',
-            { headers: { 'Content-Type': 'text/html' } }
-        )
-    );
+    // For each image requested send working.gif
+    
 });
