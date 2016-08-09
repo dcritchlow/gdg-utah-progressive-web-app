@@ -11,5 +11,9 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
     console.log("Caught a fetch!");
     // For each image requested send working.gif
-    
+    if (event.request.url.endsWith('.jpg') || event.request.url.endsWith('.png')){
+        event.respondWith(
+            fetch('/images/working.gif')
+        );
+    }
 });
