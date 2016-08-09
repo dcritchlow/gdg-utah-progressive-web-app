@@ -491,6 +491,12 @@ if(typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') {
 <script type='text/javascript' src='http://devfestfam.com/wp-content/themes/bb-theme/js/bootstrap.min.js?ver=1.2.8'></script>
 <script type='text/javascript' src='http://devfestfam.com/wp-content/themes/bb-theme/js/theme.js?ver=1.2.8'></script>
 <script type='text/javascript' src='http://devfestfam.com/wp-includes/js/wp-embed.min.js?ver=4.5.3'></script>
-
+<script>
+    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+        console.log('◕‿◕', reg);
+    }, function(err) {
+        console.log('ಠ_ಠ', err);
+    });
+</script>
 </body>
 </html>
