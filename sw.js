@@ -10,4 +10,5 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
     console.log("Caught a fetch!");
+    // Intercept fetch request and return a custom html response
 });
