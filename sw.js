@@ -2,7 +2,7 @@ var staticCacheName = 'devfestfam-static-v2';
 
 self.addEventListener('install', function(event) {
     var urlsToCache = [
-        '/',
+        'index.html',
         'css/9-layout.css',
         'css/bootstrap.min.css',
         'css/jquery.bxslider.css',
