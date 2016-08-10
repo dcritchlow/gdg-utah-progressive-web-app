@@ -2,7 +2,7 @@
   "name": "DevFest Fam",
   "scope": "/",
   "icons": [{
-    "src": "/images/icon.png",
+    "src": "images/icon.png",
     "sizes": "144x144",
     "type": "image/png"
   }],
