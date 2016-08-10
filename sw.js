@@ -54,3 +54,5 @@ self.addEventListener('fetch', function(event) {
         })
     );
 });
+
+// TODO: listen for the "message" event, and call skipWaiting when appropriate
