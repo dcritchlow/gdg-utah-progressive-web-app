@@ -25,14 +25,16 @@ self.addEventListener('install', function(event) {
         'js/wp-embed.min.js',
     ];
     event.waitUntil(
-        caches.open('devfestfam-static-v1').then(function(cache){      
+        caches.open('devfestfam-static-v2').then(function(cache){      
             return cache.addAll(urlsToCache);
         })
     );
 });
 
 self.addEventListener('activate', function(event) {
-    // TODO: remove the old cache
+    event.waitUntil(
+        caches.delete('devfestfam-static-v1')
+    );
 });
 
 self.addEventListener('fetch', function(event) {
