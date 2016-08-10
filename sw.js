@@ -27,6 +27,9 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
         // TODO: open a cache  named 'devfestfam-static-v1'
         // And cache the urls from urlsToCache
+        caches.open('devfestfam-static-v1').then(function(cache){      
+            return cache.addAll(urlsToCache);
+        })
     );
 });
 
