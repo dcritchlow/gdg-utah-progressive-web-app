@@ -8,6 +8,9 @@ const staticOptions = {
 
 app.use("/sw.js", express.static(__dirname + '/sw.js', staticOptions));
 app.use('/images', express.static(__dirname + '/images', staticOptions));
+app.use('/img/bxslider', express.static(__dirname + '/img/bxslider', staticOptions));
+app.use('/js', express.static(__dirname + '/js', staticOptions));
+app.use('/css', express.static(__dirname + '/css', staticOptions));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/devfestfam.html');
