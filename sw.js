@@ -1,4 +1,4 @@
-console.log("SW startup");
+var staticCacheName = 'devfestfam-static-v2';
 
 self.addEventListener('install', function(event) {
     var urlsToCache = [
@@ -25,7 +25,7 @@ self.addEventListener('install', function(event) {
         'js/wp-embed.min.js',
     ];
     event.waitUntil(
-        caches.open('devfestfam-static-v2').then(function(cache){      
+        caches.open(staticCacheName).then(function(cache){      
             return cache.addAll(urlsToCache);
         })
     );
@@ -33,13 +33,20 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
-        caches.delete('devfestfam-static-v1')
+        caches.keys().then(function(cacheNames){
+            return Promise.all(
+                cacheNames.filter(function(cacheName){
+                    return cacheName.startsWith('devfestfam-') &&
+                        cacheName != staticCacheName;
+                }).map(function(cacheName){
+                    return caches.delete(cacheName);
+                })
+            );
+        })
     );
 });
 
 self.addEventListener('fetch', function(event) {
-    // TODO: respond with an entry from the cache if there is one.
-    // If there isn't, fetch from the network.
     event.respondWith(
         caches.match(event.request).then(function(response){
             if(response) return response;
