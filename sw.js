@@ -32,7 +32,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-    console.log("SW activated");
+    // TODO: remove the old cache
 });
 
 self.addEventListener('fetch', function(event) {
