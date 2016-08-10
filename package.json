@@ -9,6 +9,7 @@
   "author": "Darin Critchlow",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "toastr": "^2.1.2"
   }
 }
