@@ -25,8 +25,6 @@ self.addEventListener('install', function(event) {
         'js/wp-embed.min.js',
     ];
     event.waitUntil(
-        // TODO: open a cache  named 'devfestfam-static-v1'
-        // And cache the urls from urlsToCache
         caches.open('devfestfam-static-v1').then(function(cache){      
             return cache.addAll(urlsToCache);
         })
@@ -38,17 +36,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        fetch(event.request).then(function(response){
-            if(response.status == 404){
-                // TODO: instead, respond with the gif at
-                // /images/mario.gif
-                // using a network request
-                return fetch('/images/mario.gif');
-            }
-            return response;
-        }).catch(function(){
-            return new Response("Uh oh, that totally failed!");
-        })
-    );
+    // TODO: respond with an entry from the cache if there is one.
+    // If there isn't, fetch from the network.
+    
 });
