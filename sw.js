@@ -25,7 +25,7 @@ self.addEventListener('install', function(event) {
         'js/wp-embed.min.js',
     ];
     event.waitUntil(
-        caches.open(staticCacheName).then(function(cache){      
+        caches.open(staticCacheName).then(function(cache){
             return cache.addAll(urlsToCache);
         })
     );
@@ -56,3 +56,8 @@ self.addEventListener('fetch', function(event) {
 });
 
 // TODO: listen for the "message" event, and call skipWaiting when appropriate
+self.addEventListener('message', function(event){
+    if(event.data.action == 'skipWaiting'){
+        self.skipWaiting();
+    }
+});
