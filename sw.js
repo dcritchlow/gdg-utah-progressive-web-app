@@ -15,7 +15,7 @@ self.addEventListener('fetch', function(event) {
                 // TODO: instead, respond with the gif at
                 // /images/mario.gif
                 // using a network request
-                return new Response("Whoops, not found");
+                return fetch('/images/mario.gif');
             }
             return response;
         }).catch(function(){
