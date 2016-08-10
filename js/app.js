@@ -35,34 +35,23 @@ function sendMessage(worker){
     );
 }
 
-// TODO: add function that will tell the service worker to skipWaiting when update btn clicked
 function refreshPage(worker){
     worker.postMessage({action: 'skipWaiting'});
 }
 
-navigator.serviceWorker.register('/sw.js').then(function(reg) {
-    // TODO: if there's no controller, this page wasn't loaded
-    // via a service worker, so they're looking at the latest version.
-    // In that case, exit early
+navigator.serviceWorker.register('sw.js').then(function(reg) {
     if(!navigator.serviceWorker.controller) return;
 
-    // TODO: if there's an updated worker already waiting, send a
-    // message to the user
     if (reg.waiting){
         sendMessage(reg.waiting);
         return;
     }
 
-    // TODO: if there's an updated worker installing, track its
-    // progrees. It if becomes "installed", send a message to the user
     if(reg.installing){
         trackChanges(reg.installing);
         return;
     }
 
-    // TODO: otherwise, listen for new installing workers arriving.
-    // If one arrives, track its progress.
-    // If it becomes "installed", send message to user
     reg.addEventListener('updatefound', function(){
         trackChanges(reg.installing);
     });
@@ -71,7 +60,6 @@ navigator.serviceWorker.register('/sw.js').then(function(reg) {
 });
 
 
-// TODO: listen for the controlling service worker changing and reload the page
 navigator.serviceWorker.addEventListener('controllerchange', function(){
     window.location.reload();
 });
