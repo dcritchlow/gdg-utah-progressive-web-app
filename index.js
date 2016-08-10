@@ -13,6 +13,7 @@ app.use('/js', express.static(__dirname + '/js', staticOptions));
 app.use('/css', express.static(__dirname + '/css', staticOptions));
 app.use('/js/toastr.min.js', express.static(__dirname + '/node_modules/toastr/build/toastr.min.js', staticOptions));
 app.use('/css/toastr.min.css', express.static(__dirname + '/node_modules/toastr/build/toastr.min.css', staticOptions));
+app.use('/manifest.json', express.static(__dirname + '/manifest.json', staticOptions));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/devfestfam.html');
