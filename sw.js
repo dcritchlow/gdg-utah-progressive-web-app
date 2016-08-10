@@ -29,7 +29,7 @@ self.addEventListener('install', function(event) {
         'images/children-593313_1280.jpg',
         'images/DevFest-Fam-Logo.jpg',
         'images/googlelogo_color_300x104dp.png',
-        'images/neumont-logo.png'
+        'images/neumont-logo.png',
     ];
 
     event.waitUntil(
