@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
