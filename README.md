@@ -36,7 +36,12 @@ HEAD -> master
 
 [jakearchibald.com](https://jakearchibald.com) Jake Archibald
 
-[Instant Loading: Building offline-first Progressive Web Apps](https://www.youtube.com/watch?v=cmGr0RszHc8&feature=youtu.be) Google I/O 2016 
+[Instant Loading: Building offline-first Progressive Web Apps](https://www.youtube.com/watch?v=cmGr0RszHc8&feature=youtu.be) Google I/O 2016
+
+[Installable Web Apps](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android?hl=en) Google Developers
+
+## Working offline index.html page
+[GitHub Pages finished site](https://dcritchlow.github.io/gdg-utah-progressive-web-app/https://dcritchlow.github.io/gdg-utah-progressive-web-app/) gh-pages branch 
 
 ## Google Slide
 [Progressive Apps](https://docs.google.com/presentation/d/1sa7hwXsJWvI9MWecoiNmF4M_kwH3P_g3OMaUQ9jH2qY/edit?usp=sharing)
